@@ -7,6 +7,18 @@ class UserModel extends User {
     required super.email,
   });
 
+  UserModel copyWith({
+    String? id,
+    String? name,
+    String? email,
+  }) {
+    return UserModel(
+      id: id ?? super.id,
+      name: name ?? super.name,
+      email: email ?? super.email,
+    );
+  }
+
   factory UserModel.fromJson(Map<String, dynamic> data) {
     return UserModel(
       id: data['id'] ?? '',

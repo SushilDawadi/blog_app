@@ -4,3 +4,5 @@ import 'package:dartz/dartz.dart';
 abstract interface class Usercase<SuccesType, Params> {
   Future<Either<Failure, SuccesType>> call(Params params);
 }
+
+class NoParams {}

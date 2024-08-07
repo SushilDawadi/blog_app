@@ -8,6 +8,18 @@ import 'package:dartz/dartz.dart';
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource authRemoteDataSource;
   AuthRepositoryImpl({required this.authRemoteDataSource});
+
+  @override
+  Future<Either<Failure, User>> currentUser() async {
+    final user = await authRemoteDataSource.getCurrentUserData();
+    if (user == null) {
+      return Left(
+        Failure("User is null"),
+      );
+    }
+    return Right(user);
+  }
+
   @override
   Future<Either<Failure, User>> loginInWithEmailPassword(
       {required String email, required String password}) async {
