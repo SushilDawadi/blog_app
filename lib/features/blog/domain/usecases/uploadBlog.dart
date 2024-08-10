@@ -6,7 +6,7 @@ import 'package:blog_app/features/blog/domain/entity/blog.dart';
 import 'package:blog_app/features/blog/domain/repositories/blog_repositories.dart';
 import 'package:dartz/dartz.dart';
 
-class Uploadblog implements Usercase<Blog, uploadBlogParams> {
+class Uploadblog implements Usecase<Blog, uploadBlogParams> {
   final BlogRepository blogRepository;
 
   Uploadblog({required this.blogRepository});

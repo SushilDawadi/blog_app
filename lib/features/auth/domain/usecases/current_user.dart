@@ -4,7 +4,7 @@ import 'package:blog_app/features/auth/domain/entities/user.dart';
 import 'package:blog_app/features/auth/domain/repository/auth_repository.dart';
 import 'package:dartz/dartz.dart';
 
-class CurrentUser implements Usercase<User, NoParams> {
+class CurrentUser implements Usecase<User, NoParams> {
   final AuthRepository repository;
 
   CurrentUser(this.repository);

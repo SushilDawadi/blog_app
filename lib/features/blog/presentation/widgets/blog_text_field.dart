@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 
 class BlogTextField extends StatelessWidget {
-  BlogTextField({super.key, required this.hintText});
+  const BlogTextField(
+      {super.key,
+      required this.hintText,
+      required this.controller,
+      required this.text});
 
-  final TextEditingController controller = TextEditingController();
+  final TextEditingController controller;
   final String hintText;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      validator: (value) => value!.isEmpty ? '$text is missing!' : null,
       controller: controller,
       maxLines: null,
       decoration: InputDecoration(

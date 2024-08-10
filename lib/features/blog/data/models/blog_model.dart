@@ -1,14 +1,16 @@
 import 'package:blog_app/features/blog/domain/entity/blog.dart';
 
 class BlogModel extends Blog {
-  BlogModel(
-      {required super.id,
-      required super.posterId,
-      required super.title,
-      required super.content,
-      required super.topics,
-      required super.imageUrl,
-      required super.updatedAt});
+  BlogModel({
+    required super.id,
+    required super.posterId,
+    required super.title,
+    required super.content,
+    required super.topics,
+    required super.imageUrl,
+    required super.updatedAt,
+    super.posterName,
+  });
 
   BlogModel copyWith({
     String? id,
@@ -18,6 +20,7 @@ class BlogModel extends Blog {
     List<String>? topics,
     String? imageUrl,
     DateTime? updatedAt,
+    String? posterName,
   }) {
     return BlogModel(
       id: id ?? this.id,
@@ -27,6 +30,7 @@ class BlogModel extends Blog {
       topics: topics ?? this.topics,
       imageUrl: imageUrl ?? this.imageUrl,
       updatedAt: updatedAt ?? this.updatedAt,
+      posterName: posterName ?? this.posterName,
     );
   }
 
@@ -48,11 +52,11 @@ class BlogModel extends Blog {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'posterId': posterId,
+      'poster_id': posterId,
       'title': title,
       'content': content,
       'topics': topics,
-      'imageUrl': imageUrl,
+      'image_url': imageUrl,
       'updated_at': updatedAt.toIso8601String(),
     };
   }

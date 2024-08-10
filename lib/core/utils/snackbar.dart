@@ -19,7 +19,8 @@ void showCustomSnackBar(BuildContext context, String message,
         ),
         content: Text(
           message,
-          style: const TextStyle(color: AppColor.primaryColor),
+          style: TextStyle(
+              color: isError ? AppColor.white : AppColor.primaryColor),
         ),
         backgroundColor: isError ? Colors.red : AppColor.subtleColor,
         action: SnackBarAction(
@@ -27,8 +28,9 @@ void showCustomSnackBar(BuildContext context, String message,
           onPressed: () {
             ScaffoldMessenger.of(context).hideCurrentSnackBar();
           },
-          textColor: AppColor.primaryColor,
+          textColor: isError ? AppColor.white : AppColor.primaryColor,
         ),
       ),
     );
 }
+ 

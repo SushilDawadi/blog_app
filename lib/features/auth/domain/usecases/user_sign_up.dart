@@ -4,7 +4,7 @@ import 'package:blog_app/features/auth/domain/entities/user.dart';
 import 'package:blog_app/features/auth/domain/repository/auth_repository.dart';
 import 'package:dartz/dartz.dart';
 
-class UserSignUp implements Usercase<User, UserSignUpParams> {
+class UserSignUp implements Usecase<User, UserSignUpParams> {
   final AuthRepository authRepository;
 
   UserSignUp({required this.authRepository});
