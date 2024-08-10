@@ -33,6 +33,7 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        forceMaterialTransparency: true,
         backgroundColor: Colors.transparent,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios),
@@ -47,6 +48,10 @@ class _SignupPageState extends State<SignupPage> {
           listener: (context, state) {
             if (state is AuthFailure) {
               showCustomSnackBar(context, state.message);
+            }
+            if (state is AuthSuccess) {
+              Navigator.pushNamedAndRemoveUntil(
+                  context, AppRoutes.blog, (route) => false);
             }
           },
           builder: (context, state) {

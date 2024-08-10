@@ -37,6 +37,10 @@ class _LoginPageState extends State<LoginPage> {
             if (state is AuthFailure) {
               showCustomSnackBar(context, state.message);
             }
+            if (state is AuthSuccess) {
+              Navigator.pushNamedAndRemoveUntil(
+                  context, AppRoutes.blog, (route) => false);
+            }
           },
           builder: (context, state) {
             if (state is AuthLoading) {

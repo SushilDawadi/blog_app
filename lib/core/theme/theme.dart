@@ -2,7 +2,7 @@ import 'package:blog_app/core/theme/app_color.dart';
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  static _border([Color color = AppColor.secondaryColor]) => OutlineInputBorder(
+  static border([Color color = AppColor.secondaryColor]) => OutlineInputBorder(
         borderSide: BorderSide(
           color: color,
           width: 3,
@@ -17,7 +17,9 @@ class AppTheme {
       ),
       inputDecorationTheme: InputDecorationTheme(
         contentPadding: const EdgeInsets.all(27),
-        enabledBorder: _border(),
-        focusedBorder: _border(AppColor.focusColor),
+        enabledBorder: border(),
+        focusedBorder: border(AppColor.focusColor),
+        errorBorder: border(Colors.red),
+        focusedErrorBorder: border(Colors.red),
       ));
 }

@@ -1,3 +1,4 @@
+import 'package:blog_app/core/theme/theme.dart';
 import 'package:flutter/material.dart';
 
 class AuthField extends StatelessWidget {
@@ -14,6 +15,7 @@ class AuthField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       decoration: InputDecoration(
+        border: AppTheme.border(),
         hintText: hintText,
       ),
       obscureText: obscureText,
